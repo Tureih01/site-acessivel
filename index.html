@@ -1,115 +1,161 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <title>Tropicália</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>História de Gusttavo Lima</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* Regra de estilo para forçar herança de tamanho de fonte para todos os textos */
+        h1, h2, p, strong, button {
+            font-size: inherit !important;
+        }
+
+        /* Estilos para o tema de alto contraste */
+        [data-theme="dark"] .bg-amber-50 { background-color: #000; }
+        [data-theme="dark"] .text-gray-800 { color: #f0f0f0; }
+        [data-theme="dark"] .bg-white { background-color: #2c2c2c; }
+        [data-theme="dark"] .bg-orange-500 { background-color: #000; }
+        [data-theme="dark"] .text-white { color: #fff; }
+        [data-theme="dark"] .text-amber-800 { color: #ff0; }
+        [data-theme="dark"] .shadow-lg { box-shadow: 0 4px 6px -1px rgba(255, 255, 255, 0.1), 0 2px 4px -1px rgba(255, 255, 255, 0.06); }
+        [data-theme="dark"] .shadow-md { box-shadow: 0 4px 6px -1px rgba(255, 255, 255, 0.1), 0 2px 4px -1-px rgba(255, 255, 255, 0.06); }
+        [data-theme="dark"] .rounded-xl { border-radius: 0; }
+        [data-theme="dark"] .rounded-lg { border-radius: 0; }
+    </style>
 </head>
+<body class="bg-amber-50 text-gray-800">
 
-<body>
-    <header class=" p-5">
+    <div class="container mx-auto p-4 md:p-8">
 
-        <nav class="container d-flex justify-content-between align-items-center">
-            <img src="img/logo.png" alt="Logotipo da Tropicália" class="nav-img " loading="lazy">
-            <ul class="nav mt-5">
-                <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
-                <li class="nav-item"><a class="nav-link" href="#galeria">Galeria</a></li>
-                <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
-            </ul>          
-        </nav>
-       
-    </header>
-
-
-    <main class="container my-5">
-
-        <section id="inicio" class="my-5">
-            <div class="inicio-fundo d-flex justify-content-between align-items-center">
-                <div class="esquerda-conteudo">
-                    <h1 class="display-4 text-white fst-italic fw-bold">Boas-vindas a</h1>
-                    <img src="img/logo-2.png" alt="Logotipo secundário da Tropicália" class="mb-3" width="563"
-                        height="278" loading="lazy">
-                    <a href="#tropicalia"
-                        class="btn btn-primary btn-lg botao-inicio fw-semibold">Quero
-                        conhecer!</a>
-                </div>
-
+        <!-- Header -->
+        <header class="bg-orange-500 text-white rounded-xl shadow-lg p-6 md:p-10 mb-8 flex flex-col md:flex-row justify-between items-center">
+            <div>
+                <h1 class="text-3xl md:text-5xl font-bold">Gusttavo Lima: O Embaixador do Sertanejo</h1>
+                <p class="mt-2 text-lg italic">A trajetória de um ícone da música brasileira</p>
             </div>
-        </section>
-
-        <section id="tropicalia" class="my-5 pt-6 secao-tropicalia">
-            <div class="container d-flex align-items-center ">
-                  <div class="col-5">
-                    <h2>O que foi a Tropicália?</h2>
-                    <p class="p-2">A Tropicália, também conhecida como Tropicalismo, foi um movimento cultural
-                        brasileiro que surgiu na década de 1960, tendo seu auge entre 1967 e 1968. Esse movimento
-                        abrangeu várias expressões artísticas, como a música, o cinema, o teatro e as artes plásticas, e
-                        teve como principal característica a mistura de elementos da cultura brasileira tradicional com
-                        influências estrangeiras, especialmente do rock e da música pop.</p>
-                </div>
+            <div class="flex mt-4 md:mt-0 space-x-2">
+                <button id="font-decrease" aria-label="Diminuir tamanho da fonte" class="bg-white text-orange-500 font-bold py-2 px-4 rounded-full shadow-lg transition-colors duration-300 hover:bg-gray-200 focus:outline-none focus:ring focus:ring-orange-300">
+                    A-
+                </button>
+                <button id="font-increase" aria-label="Aumentar tamanho da fonte" class="bg-white text-orange-500 font-bold py-2 px-4 rounded-full shadow-lg transition-colors duration-300 hover:bg-gray-200 focus:outline-none focus:ring focus:ring-orange-300">
+                    A+
+                </button>
+                <button id="contrast-toggle" aria-label="Alternar para alto contraste" class="bg-white text-orange-500 font-bold py-2 px-4 rounded-full shadow-lg transition-colors duration-300 hover:bg-gray-200 focus:outline-none focus:ring focus:ring-orange-300">
+                    Alto Contraste
+                </button>
             </div>
-        </section>
+        </header>
 
-        <section id="galeria">
-            <h2 class="text-center pt-5">Galeria</h2>
-            <div class="container p-3 mt-3 fundo-galeria ">
+        <!-- Main Content -->
+        <main class="bg-white rounded-xl shadow-lg p-6 md:p-10">
 
-                <div class="row justify-content-md-center">
-                    <div class="col-md-4">
-                        <img src="img/lossy-page1-640px-Jorge_Ben_e_o_Trio_Mocotó_no_Teatro_da_Lagoa,_1971.tif.jpg"
-                            class="img-fluid rounded-5" loading="lazy">
-                    </div>
-                    <div class="col-md-4">
-                        <img src="img/lossy-page1-640px-Os_Mutantes_2.tif.jpg" class="img-fluid rounded-5"
-                            loading="lazy">
-                    </div>
+            <!-- Introduction -->
+            <section class="mb-8">
+                <h2 class="text-2xl md:text-3xl font-semibold text-amber-800 mb-4">Nivaldo Batista Lima: O Início</h2>
+                <p class="text-base md:text-lg leading-relaxed mb-4">
+                    Nivaldo Batista Lima, mais conhecido como Gusttavo Lima, é um cantor, compositor, produtor musical e empresário brasileiro. Nascido em 3 de setembro de 1989 em Presidente Olegário, Minas Gerais, ele começou sua jornada musical ainda na infância, tocando violão no interior do estado.
+                </p>
+                <div class="flex justify-center">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Gustavo_Lima_2021.jpg/640px-Gustavo_Lima_2021.jpg" alt="Gusttavo Lima com um microfone no palco em 2021" class="rounded-lg shadow-md max-w-full h-auto border-4 border-yellow-400">
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section id="contato">
-            <div class="container p-5 d-flex justify-content-center">
-                <div class="col-md-8 col-lg-10 rounded-5 formulario"> <!-- Caixa do formulário com 60% de largura -->
-                    <h2 class="mb-3">Entre em contato</h2>
-                    <form>
-                        <div class="form-group mb-3">
-                            <label for="nome">Nome</label>
-                            <input type="text" id="nome" name="nome" class="form-control rounded-3 mt-1"
-                                placeholder="Digite seu nome completo">
-                        </div>
-                        <div class="form-group mb-3">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" class="form-control rounded-3 mt-1"
-                                placeholder="Digite seu email">
-                        </div>
-                        <div class="form-group mb-3">
-                            <label for="mensagem">Mensagem</label>
-                            <textarea id="mensagem" name="mensagem" class="form-control rounded-4 mt-2" rows="4"
-                                placeholder="Escreva sua mensagem"></textarea>
-                        </div>
-                        <div class="d-grid gap-2">
-                            <button type="submit" class="btn btn-primary btn-lg rounded-pill tamanho-botao">Enviar
-                                mensagem</button>
-                        </div>
-                    </form>
+            <!-- Rise to Fame -->
+            <section class="mb-8">
+                <h2 class="text-2xl md:text-3xl font-semibold text-amber-800 mb-4">A Virada de Chave</h2>
+                <p class="text-base md:text-lg leading-relaxed mb-4">
+                    A carreira solo de Gusttavo Lima começou a decolar no final dos anos 2000, mas foi em 2011 que ele alcançou o sucesso nacional e internacional com o hit <strong>"Balada"</strong>. A música, com seu refrão inconfundível, o projetou para o estrelato e o tornou um fenômeno da música pop sertaneja.
+                </p>
+                <p class="text-base md:text-lg leading-relaxed">
+                    A partir daí, sua popularidade explodiu. Ele emplacou diversos sucessos como "Inventor dos Amores" e "Apelido Carinhoso", solidificando seu nome como um dos principais artistas do país.
+                </p>
+            </section>
+
+            <!-- The Ambassador -->
+            <section class="mb-8">
+                <h2 class="text-2xl md:text-3xl font-semibold text-amber-800 mb-4">O Título de Embaixador</h2>
+                <p class="text-base md:text-lg leading-relaxed">
+                    O famoso apelido de "O Embaixador" surgiu em 2017, quando Gusttavo Lima foi convidado para ser o embaixador da Festa do Peão de Barretos, o maior evento do gênero sertanejo do Brasil. Esse título não apenas reforçou seu status na música, mas também o consolidou como uma figura central no cenário cultural brasileiro.
+                </p>
+                <p class="text-base md:text-lg leading-relaxed">
+                    Com uma carreira que une talento musical e visão empresarial, Gusttavo Lima se mantém no topo, com uma agenda lotada de shows e uma fortuna estimada que o coloca entre os artistas mais ricos do Brasil.
+                </p>
+            </section>
+            
+            <!-- New Section with another Image -->
+            <section>
+                <h2 class="text-2xl md:text-3xl font-semibold text-amber-800 mb-4">Conexão com os Fãs</h2>
+                <p class="text-base md:text-lg leading-relaxed mb-4">
+                    Além de sua música, Gusttavo Lima é conhecido por sua forte conexão com os fãs. Ele frequentemente interage com seu público, seja nos palcos ou nas redes sociais, o que solidificou sua base de admiradores leais e apaixonados.
+                </p>
+                <div class="flex justify-center">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Gusttavolima_fanfestdf.JPG/640px-Gusttavolima_fanfestdf.JPG" alt="Gusttavo Lima acenando para fãs em um evento" class="rounded-lg shadow-md max-w-full h-auto border-4 border-yellow-400">
                 </div>
-            </div>
-        </section>
-    </main>
-    <footer class="text-center p-3 fst-italic">
-        <p>Acesse nossas redes:</p>
-        <i class="bi bi-whatsapp"></i>
-        <i class="bi bi-instagram"></i>
-        <i class="bi bi-tiktok"></i>
-        <p class="mt-3">Desenvolvido por Start by Alura. Projeto fictício sem fins comerciais.</p>
-    </footer>
-    <script src="script.js"></script>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="text-center text-sm text-gray-600 mt-8">
+            <p>&copy; 2025 - Projeto Alura de Arthur.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        const themeToggleBtn = document.getElementById('contrast-toggle');
+        const fontIncreaseBtn = document.getElementById('font-increase');
+        const fontDecreaseBtn = document.getElementById('font-decrease');
+        const htmlElement = document.documentElement;
+        const bodyElement = document.body;
+
+        const currentTheme = localStorage.getItem('theme');
+        const currentFontSize = localStorage.getItem('fontSize');
+        const baseFontSize = 16;
+        let currentSize = currentFontSize ? parseInt(currentFontSize) : baseFontSize;
+        
+        const setFontSize = (size) => {
+            bodyElement.style.fontSize = `${size}px`;
+            localStorage.setItem('fontSize', size);
+        };
+
+        if (currentTheme) {
+            htmlElement.setAttribute('data-theme', currentTheme);
+        }
+
+        if (currentFontSize) {
+            setFontSize(currentSize);
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            if (htmlElement.getAttribute('data-theme') === 'dark') {
+                htmlElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            } else {
+                htmlElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+
+        fontIncreaseBtn.addEventListener('click', () => {
+            if (currentSize < 24) {
+                currentSize += 2;
+                setFontSize(currentSize);
+            }
+        });
+
+        fontDecreaseBtn.addEventListener('click', () => {
+            if (currentSize > 12) {
+                currentSize -= 2;
+                setFontSize(currentSize);
+            }
+        });
+    </script>
 
 </body>
-
 </html>
